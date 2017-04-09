@@ -4,16 +4,16 @@ This is implemented as `DataLoader.__load_sample()`.
 
 *How did you verify that you are parsing the contours correctly?*
 
-See `test_parsing.py`, which overlays masks over original images and 4 example results (see 4 images in test_data). Also, I use logging for errors and the dataset could be loaded without any errors.
+See `test_parsing.py`, which overlays masks over original images and 4 example results (see 4 png images in test_data).
 
 *What changes did you make to the code, if any, in order to integrate it into our production code base?*
 
-None, the research team did a good job;).
+None, the research team did a good job (docs, exception handling,...) ;).
 
 
 # Part 2: Model training pipeline
 
-This is implemented as `DataLoader` class.
+This is implemented as `DataLoader` class. I interpreted your third requirement as reshuffling instead of random sampling.
 
 *Did you change anything from the pipelines built in Parts 1 to better streamline the pipeline built in Part 2? If so, what? If not, is there anything that you can imagine changing in the future?*
 
@@ -21,8 +21,8 @@ I started working only when I read the goal of both Part 1 and 2, so no changes 
 
 *How do you/did you verify that the pipeline was working correctly?*
 
-See `test_dataloader.py`. I created a small test dataset and asserted the expected behavior, as specified by you, there. 
+See `test_dataloader.py`. I created a small test dataset and asserted the expected behavior there. 
 
 *Given the pipeline you have built, can you see any deficiencies that you would change if you had more time? If not, can you think of any improvements/enhancements to the pipeline that you could build in?*
 
-One can perhaps add __iter__ method or preload all images into memory.
+One can perhaps add `__iter__` method or preload all images into memory. Of course, many unit test may be added (including mocks), but I guess this was not the point of the exercise.
