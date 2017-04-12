@@ -26,3 +26,12 @@ See `test_dataloader.py`. I created a small test dataset and asserted the expect
 *Given the pipeline you have built, can you see any deficiencies that you would change if you had more time? If not, can you think of any improvements/enhancements to the pipeline that you could build in?*
 
 One can perhaps add `__iter__` method or preload all images into memory. Of course, many unit test may be added (including mocks), but I guess this was not the point of the exercise.
+
+
+# Part 3: Parse the o-contours
+
+The new requirement caused some changes. The new class can now handle both regimes (returning images with inner contour or images with both contours). I also had to change the public interface `next()` so that it returns triplets instead of pairs. In production if no change to interface was allowed, one could add a different method or derive a class. I also updated unit tests and added a testcase.
+
+# Part 4: Heuristic LV Segmentation approaches
+
+Please see `segmentation.ipynb`.
